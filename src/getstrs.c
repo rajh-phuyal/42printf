@@ -1,33 +1,8 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   getstrs.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: nexus <nexus@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 16:16:14 by rphuyal           #+#    #+#             */
-/*   Updated: 2022/11/21 00:22:06 by nexus            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+
 
 #include "../ft_printf.h"
 
-static int	get_int_len(long n)
-{
-	int	len;
-
-	len = 0;
-	if (n <= 0)
-		len++;
-	while (n)
-	{
-		len++;
-		n = n / 10;
-	}
-	return (len);
-}
-
-static int	get_hex_len(unsigned long long n)
+int	get_hex_len(unsigned long long n)
 {
 	int	len;
 
@@ -46,18 +21,33 @@ char	*ft_gethexstr(unsigned long long num, char *base)
 	int		i;
 	int		base_len;
 
-	i = 0;
+	i = get_hex_len(num);
 	base_len = 0;
 	while (base[base_len])
 		base_len++;
-	str = malloc(sizeof(char) * get_hex_len(num) + 1);
-	while (num > 0)
+	str = malloc(sizeof(char) * i + 1);
+	str[i--] = '\0';
+	while (num > 0 && i >= 0)
 	{
-		str[i++] = base[num % base_len];
+		str[i--] = base[num % base_len];
 		num /= base_len;
 	}
-	str[i] = '\0';
-	return (ft_strrev(str));
+	return (str);
+}
+
+int	get_int_len(long n)
+{
+	int	len;
+
+	len = 0;
+	if (n <= 0)
+		len++;
+	while (n)
+	{
+		len++;
+		n = n / 10;
+	}
+	return (len);
 }
 
 char	*ft_getintstr(long n)
