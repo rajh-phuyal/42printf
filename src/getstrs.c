@@ -6,13 +6,13 @@
 /*   By: nexus <nexus@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:16:14 by rphuyal           #+#    #+#             */
-/*   Updated: 2022/11/21 00:17:52 by nexus            ###   ########.fr       */
+/*   Updated: 2022/11/21 00:22:06 by nexus            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-static int	get_int_len(int n)
+static int	get_int_len(long n)
 {
 	int	len;
 
@@ -60,7 +60,7 @@ char	*ft_gethexstr(unsigned long long num, char *base)
 	return (ft_strrev(str));
 }
 
-char	*ft_getintstr(int n)
+char	*ft_getintstr(long n)
 {
 	char	*arr;
 	int		len;

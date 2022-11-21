@@ -6,7 +6,7 @@
 /*   By: nexus <nexus@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 13:10:24 by rphuyal           #+#    #+#             */
-/*   Updated: 2022/11/21 00:14:54 by nexus            ###   ########.fr       */
+/*   Updated: 2022/11/21 00:22:24 by nexus            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 int		ft_putchar(char c);
 int		ft_strlen(const char *str);
 int		ft_printf(const char *str, ...);
-char	*ft_getintstr(int n);
+char	*ft_getintstr(long n);
 char	*ft_gethexstr(unsigned long long num, char *base);
 int		ft_putstr(char *str);
 char	*ft_strchr(const char *str, int c);
