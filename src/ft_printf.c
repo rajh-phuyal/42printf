@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rphuyal <rphuyal@student.42.fr>            +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:22:43 by rphuyal           #+#    #+#             */
-/*   Updated: 2022/11/21 18:22:46 by rphuyal          ###   ########.fr       */
+/*   Updated: 2022/12/19 21:34:58 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 static char	*print_pointer(unsigned long long num, int *flength)
 {
@@ -73,25 +73,3 @@ int	ft_printf(const char *str, ...)
 	return (flenght);
 }
 
-/*
-int main(void)
-{
-	printf("%x\n", INT_MAX);
-	ft_printf("%x\n", INT_MAX);
-
-	printf("%s\n", "dfgdf");
-	ft_printf("%s\n", "dfgdf");
-
-	printf(" %p ", 16);
-	ft_printf(" %p ", 16);
-	
-	printf("%p\n", '0');
-	ft_printf("%p\n", '0');
-
-	//printf("NULL %s NULL\n", NULL);
-	//ft_printf("NULL %s NULL\n", NULL);
-
-	printf(" %x ", 16);
-	ft_printf(" %x ", 16);
-}
-*/
